@@ -236,11 +236,29 @@ export default function Chat() {
         className="flex-1 overflow-y-auto px-4 py-3 bg-gray-950"
       >
         {messages.map((m, i) => (
-          <div key={i} className="flex w-full items-center">
-            <span className="flex-1">
+          <div
+            key={i}
+            style={{
+              background: m.role === "guest" ? "#161616" : "#1f1f1f",
+              padding: "8px 12px",
+              borderRadius: "10px",
+              marginBottom: "6px",
+              display: "flex",
+              alignItems: "center",
+              border: "1px solid #2a2a2a",
+            }}
+          >
+            <span style={{ flex: 1, color: "#eaeaea" }}>
               {m.role === "guest" ? "👤 Guest" : "🐍 Mython"}: {m.text}
             </span>
-            <span className="ml-4 text-sm text-gray-500 whitespace-nowrap">
+            <span
+              style={{
+                marginLeft: "12px",
+                fontSize: "12px",
+                color: "#8a8a8a",
+                whiteSpace: "nowrap",
+              }}
+            >
               {m.time}
             </span>
           </div>
