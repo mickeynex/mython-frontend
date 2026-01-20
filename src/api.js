@@ -1,14 +1,9 @@
 import axios from "axios";
-baseURL: import.meta.env.VITE_BACKEND_HTTP
-
-/**
- * Backend HTTP client
- * Single source of truth for API base URL
- */
 export const backend = axios.create({
-  baseURL: "http://localhost:8000", // LOCAL BACKEND DURING DEV
+  baseURL: import.meta.env.VITE_BACKEND_HTTP,
   withCredentials: false,
 });
+
 
 // ---------------- Guest APIs ----------------
 
